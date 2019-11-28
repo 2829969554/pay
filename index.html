@@ -28,21 +28,27 @@
 </body>
 <script type="text/javascript">
 	var ua=navigator.userAgent;
-
-	if (ua.indexOf("MicroMessenger") != -1) {
+	var a=ua.indexOf("MicroMessenger");
+	var b=ua.indexOf("QQ");
+	var c=ua.indexOf("AlipayClient");
+	if (a != -1) {
 		document.getElementById('img').src='wx.jpg';
 
 	}
-	if (ua.indexOf("QQ") != -1) {
+	if (b != -1) {
 		document.getElementById('img').src='qq.jpg';
-
+		
 	}
-	if (ua.indexOf("AlipayClient") != -1) {
+	if (c != -1) {
 		document.getElementById('img').src='zfb.jpg';
-
+	
 	}
+
+	if(a==b &&  b==c){
 	document.getElementById('cbt').style.color='red';
 	document.getElementById('cbt').innerHTML='仅支持下列付款';
-	document.getElementById('img').src='error.png';
+	document.getElementById('img').src='error.png';		
+	}
+
 </script>
 </html>
