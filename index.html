@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<title></title>
+</head>
+<style type="text/css">
+	body{
+		border: 0px;
+		background-color: black;
+	}
+	div{
+		text-align: center;
+		border: 0px;
+	}
+	h1{
+		border: 0px;
+		color: green;
+	}
+</style>
+<body>
+<div>
+	<h1 id='cbt'>长按二维码付款</h1>
+	<img src="" id="img" style="width: 100%;height: 100%;">
+</div>
+</body>
+<script type="text/javascript">
+	var ua=navigator.userAgent;
+
+	if (ua.indexOf("MicroMessenger") != -1) {
+		document.getElementById('img').src='wx.jpg';
+
+	}
+	if (ua.indexOf("QQ") != -1) {
+		document.getElementById('img').src='qq.jpg';
+
+	}
+	if (ua.indexOf("AlipayClient") != -1) {
+		document.getElementById('img').src='zfb.jpg';
+
+	}
+	document.getElementById('cbt').style.color='red';
+	document.getElementById('cbt').innerHTML='仅支持下列付款';
+	document.getElementById('img').src='error.png';
+</script>
+</html>
